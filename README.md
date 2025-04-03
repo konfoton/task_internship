@@ -1,5 +1,2 @@
-# Main Section
-Some text here. [Jump to Subsection](#subsection)
+# Table of contents
 
-## Subsection
-More details. [Back to Main](#main-section)
