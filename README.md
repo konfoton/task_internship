@@ -1,6 +1,6 @@
 # Retrieval-Augmented Generation (RAG) system over a code repository for a question-answering task.
 # table of contents
-* overview structure
+* overview
 * set up
 * example usage
 * performance
