@@ -1,2 +1,45 @@
-# task internship
+# task internshipd
+g
+d
+d
+d
+d
+d
+d
+
+d
+d
+d
+d
+sd
+fsd
+gsd
+gsd
+gsd
+g
+sdg
+sd
+gsd
+gsd
+g
+ds
+gsd
+gsd
+g
+sdg
+asd
+gasd
+g
+sadg
+sda
+gsd
+g
+sd
+gasd
+gsd
+g
+sd
+g
+DSA
+GD
 [Go to Section 1](task-internship)
