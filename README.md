@@ -1,11 +1,11 @@
 # Retrieval-Augmented Generation (RAG) system over a code repository for a question-answering task.
-## table of contents
+# table of contents
 * overview structure
 * set up
 * example usage
 * performance
 * latancy quality trade off
-## Overview
+# Overview
 
 The system is structured into several major components:
 
