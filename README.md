@@ -1,45 +1,5 @@
-# task internshipd
-g
-d
-d
-d
-d
-d
-d
+# Main Section
+Some text here. [Jump to Subsection](#subsection)
 
-d
-d
-d
-d
-sd
-fsd
-gsd
-gsd
-gsd
-g
-sdg
-sd
-gsd
-gsd
-g
-ds
-gsd
-gsd
-g
-sdg
-asd
-gasd
-g
-sadg
-sda
-gsd
-g
-sd
-gasd
-gsd
-g
-sd
-g
-DSA
-GD
-[Go to Section 1](task-internship)
+## Subsection
+More details. [Back to Main](#main-section)
