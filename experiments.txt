@@ -1,0 +1,331 @@
+Experiment Results
+====================================
+BASELINE
+====================================
+Model: text-embedding-3-small
+Chunk size: 1200
+Overlap size: 200
+Query expansion: False
+Reranker: False
+Metadata provider: False
+
+RECALL@10: 0.7264705882352941
+Time: 1.2271771430969238
+Average Time: 0.03609344538520364
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8360294117647059
+Time: 1.4712419509887695
+Average Time: 0.04327182208790498
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: False
+Metadata provider: False
+
+RECALL@10: 0.7644607843137255
+Time: 1.2595407962799072
+Average Time: 0.03704531753764433
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8384803921568629
+Time: 1.257925033569336
+Average Time: 0.03699779510498047
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 3000
+Overlap size: 700
+Query expansion: False
+Reranker: False
+Metadata provider: False
+
+RECALL@10: 0.7681372549019608
+Time: 1.100931167602539
+Average Time: 0.03238032845889821
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8384803921568629
+Time: 1.37111496925354
+Average Time: 0.04032691086039824
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 6000
+Overlap size: 1500
+Query expansion: False
+Reranker: False
+Metadata provider: False
+
+RECALL@10: 0.7424019607843138
+Time: 1.0280239582061768
+Average Time: 0.030235998770769906
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8188725490196078
+Time: 1.724919080734253
+Average Time: 0.05073291413924273
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+More Complex tests adding reranker, query expansion and metadata
+====================================
+Model: text-embedding-3-small
+Chunk size: 1200
+Overlap size: 200
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8237745098039216
+Time: 1.8884079456329346
+Average Time: 0.05554141016567454
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.886764705882353
+Time: 1.363332748413086
+Average Time: 0.040098022012149584
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8274509803921569
+Time: 1.862623929977417
+Average Time: 0.054783056764041674
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8818627450980392
+Time: 1.2843022346496582
+Average Time: 0.037773595136754656
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 3000
+Overlap size: 700
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.7980392156862746
+Time: 1.2332677841186523
+Average Time: 0.03627258188584272
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8818627450980392
+Time: 1.5107240676879883
+Average Time: 0.044433060814352596
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-small
+Chunk size: 6000
+Overlap size: 1500
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8053921568627452
+Time: 3.0970211029052734
+Average Time: 0.09108885596780215
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8622549019607844
+Time: 1.3545610904693604
+Average Time: 0.03984003207262825
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-ada-002
+Chunk size: 1200
+Overlap size: 200
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.7644607843137254
+Time: 1.3385343551635742
+Average Time: 0.03936865750481101
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8561274509803921
+Time: 1.8487000465393066
+Average Time: 0.05437353078056784
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-ada-002
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.7889705882352941
+Time: 0.8646609783172607
+Average Time: 0.025431205244625315
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8512254901960784
+Time: 1.229191780090332
+Average Time: 0.03615269941442153
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-large
+Chunk size: 1200
+Overlap size: 200
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8318627450980393
+Time: 1.368044137954712
+Average Time: 0.040236592292785645
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8732843137254902
+Time: 1.1931779384613037
+Average Time: 0.035093468778273636
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-large
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8348039215686276
+Time: 1.5056660175323486
+Average Time: 0.04428429463330437
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8806372549019608
+Time: 2.9340620040893555
+Average Time: 0.08629594129674575
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-ada-002
+Chunk size: 2000
+Overlap size: 500
+Query expansion: DictionaryQueryExpander
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.7595588235294117
+Time: 20.692689895629883
+Average Time: 0.6086085263420554
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+RECALL@20: 0.8169117647058823
+Time: 18.6280198097229
+Average Time: 0.5478829355800853
+Token Usage: 625
+Average Token Usage: 18.38235294117647
+
+====================================
+Model: text-embedding-3-large
+Chunk size: 2000
+Overlap size: 500
+Query expansion: LLMQueryExpander
+Reranker: False
+Metadata provider: True
+
+RECALL@10: 0.8355392156862745
+Time: 89.23010993003845
+Average Time: 2.6244149979423073
+Token Usage: 6527
+Average Token Usage: 191.97058823529412
+
+RECALL@20: 0.8512254901960784
+Time: 77.63992691040039
+Average Time: 2.2835272620705998
+Token Usage: 6264
+Average Token Usage: 184.23529411764707
+
+====================================
+Model: text-embedding-ada-002
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: LLMReranker
+Metadata provider: True
+
+RECALL@10: 0.7963235294117647
+Time: 3144.6722600460052
+Average Time: 92.49036058958839
+Token Usage: 541971
+Average Token Usage: 15940.323529411764
+
+RECALL@20: 0.8169117647058823
+Time: 8786.029274225235
+Average Time: 258.4126257125069
+Token Usage: 541957
+Average Token Usage: 15939.911764705883
+
+====================================
+Model: text-embedding-ada-002
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: CrossEncoderReranker
+Metadata provider: True
+Model: text-embedding-ada-002
+Chunk size: 2000
+Overlap size: 500
+Query expansion: False
+Reranker: CrossEncoderReranker
+Metadata provider: True
+
+RECALL@10: 0.7963235294117647
+Time: 3144.6722600460052
+Average Time: 92.49036058958839
+Token Usage: 541971
+Average Token Usage: 15940.323529411764
+
+RECALL@20: 0.8169117647058823
+Time: 400.7425010204315
+Average Time: 11.78654414765975
+Token Usage: 957888
+Average Token Usage: 28173.176470588234
+
