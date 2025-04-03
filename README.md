@@ -27,7 +27,7 @@ Two approaches are provided for query expansion:
 
 ### Annotations
 
-Optionally, you can append various metadata to each chunk, including file extensions, absolute paths, relative paths for hierarchical insights, as well as function and class definitions.
+Optionally, you can append various metadata to each chunk, including file extensions, absolute paths, relative paths for hierarchical insights, as well as function and class definitions (So far it works only for .js and .vue but it can be easily extended).
 
 ### Metric
 
