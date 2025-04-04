@@ -407,18 +407,26 @@ def start_ui():
                 console.print(f"[bold blue]Token Usage: {results[2][0]}[/bold blue]\n")
             if show_time:
                 console.print(f"[bold blue]Time: {results[3]}[/bold blue]\n")
-        elif user_input.lower() == "evalute":
+        elif user_input.lower() == "evaluate":
             while True:
                 if global_object is None:
                     console.print("[bold magenta]Please index a repository first![/bold magenta]")
                     break
                 print("evaluted wihout reranker and query expansion due to high latency")
                 recall_number = get_input("[bold white]Enter recall number:")
+                if recall.lower() == "cancel":
+                    cancel_flag = True
+                    break
                 if recall_number.isdigit() and int(recall_number) > 0:
                     recall_number = int(recall_number)
                     recall = Recall(recall_number,  data_path='escrcpy-commits-generated.json')
-                    global_object.evaluate(top_k=recall_number, metric=recall, query_expansion=None, rerank=None, token_usage=True, time=True)
+                    print(f"recall number: {recall_number}")
+                    print(global_object.evaluate(top_k=recall_number, metric=recall, query_expansion=None, rerank=None, token_usage=True, time=True))
                     break
+            if cancel_flag:
+                cancel_flag = False
+                console.print("[bold magenta]Operation cancelled.[/bold magenta]")
+                continue
 
 
 

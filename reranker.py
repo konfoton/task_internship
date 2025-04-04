@@ -21,6 +21,11 @@ class LLMReranker:
         self.shortening_token = shortening_token
 
     def rerank(self, query, list_of_candidates_paths):
+        """
+        LLM reranker based on list_of_candidates_paths relvent to the query.
+        Returns [ranked_indices, total_tokens]
+        """
+
         consecutive_sum = []
         messages = []
         # Read files and create message content
@@ -66,14 +71,20 @@ class LLMReranker:
         return [parsed_response, completion.usage.total_tokens]
     
 class CrossEncoderReranker:
+    """
+    Cross-encoder reranker based on list_of_candidates_paths relvent to the query.
+    returuns [ranked_indices, total_tokens]
+    """
     def __init__(self, model_name="cross-encoder/ms-marco-MiniLM-L-12-v2", 
                  chunk_size=512, 
                  overlap=100):
         self.enc = tiktoken.get_encoding("cl100k_base")
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
-        self.chunk_size = chunk_size - 40# Size of each document chunk
-        self.overlap = overlap  # Overlap between consecutive chunks
+        # Size of each document chunk we remove 40 tokens for qurey in order not to remove much text
+        self.chunk_size = chunk_size - 40 
+        # Overlap between consecutive chunks
+        self.overlap = overlap 
         
     def chunk_document(self, content: str) -> List[str]:
         tokens = self.enc.encode(content)
@@ -95,12 +106,11 @@ class CrossEncoderReranker:
         return chunks
          
     def rerank(self, query, list_of_candidates_paths):
-        # Dictionary to store file chunks and their indices
-        all_chunks = []  # List of (file_idx, chunk_text) tuples
+        # stroring chunk (index, content) wehre same index denote same file
+        all_chunks = []
         valid_indices = []
         total_tokens = 0
         
-        # Allocate tokens per file based on file count
         # Process each file
         for index, path in enumerate(list_of_candidates_paths):
             try:

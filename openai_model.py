@@ -45,6 +45,9 @@ class OpenAIModel(BaseModel):
             return chunks
     
     def build_cost(self, mutiple_chunks_per_file = False, chunk_size = 1200, overlap_size = 200, metadata = None):
+        """
+        Approximately calculates the cost of the embedding for the files in the repo
+        """
         if self.model == "text-embedding-3-small":
             cost = 0.02 / 1000000
         elif self.model == "text-embedding-3-large":
@@ -95,12 +98,11 @@ class OpenAIModel(BaseModel):
     def create_index(self, index_name, file_store_name, mutiple_chunks_per_file = False, chunk_size = 1200, overlap_size = 200, metadata = None):
         """
         Quick description: creates an index for the files in the repo 
-        deafult method is to create one chunk per file where the size of the chunk is the limit
-        of selected model
         """
         paths = []
         file_contents = []
         if not mutiple_chunks_per_file:
+            #trunacting the file to the limit
             for root, dirs, files in os.walk(self.repo_path):
                 for file in files:
                     file_path = os.path.join(root, file)
@@ -119,6 +121,7 @@ class OpenAIModel(BaseModel):
                     except UnicodeDecodeError:
                         continue
         else:
+            # handling multiple chunks per file
             for root, dirs, files in os.walk(self.repo_path):
                 for file in files:
                     file_path = os.path.join(root, file)
@@ -205,13 +208,14 @@ class OpenAIModel(BaseModel):
         
         current_scope = top_k
 
+        # adding how many documents to rerank
         if number_to_rerank is not None:
             current_scope = number_to_rerank
 
 
         query_embeddings = self.get_embedding(queries)
   
-
+        # building the index
         D, I = index.search(query_embeddings, upper_bound_search)
         for i in range(len(I)):
 
@@ -229,7 +233,10 @@ class OpenAIModel(BaseModel):
             values_top_all_queries.append(distinct_values)
 
 
-
+        # query expansion
+        # claculating first number of current scope documents and its vaues
+        # then i qury expansion and then search again
+        # finding doucments which smaller dinstanes and are not included in the first search
         if query_expansion is not None:
             queries_expansion = []
             for idx, query in enumerate(queries):
@@ -252,7 +259,7 @@ class OpenAIModel(BaseModel):
                                     break
 
 
-
+        # reranking documents
         if rerank is not None:
             for index_query, query in enumerate(queries):
                 result = rerank.rerank(query, top_paths_all_queries[index_query])

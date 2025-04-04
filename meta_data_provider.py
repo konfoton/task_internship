@@ -9,15 +9,8 @@ class MetaDataProvider:
     def get_metadata(file_path):
         """
         Parse a Vue or JS file to extract function names and class names.
-        
-        Args:
-            file_path (str): Path to the Vue or JS file
-            
-        Returns:
-            dict: Dictionary containing lists of function names and class names
         """
         
-        # Check file extension
 
         file_name = os.path.basename(file_path)
         file_extension = os.path.splitext(file_path)[1].lower()
@@ -25,11 +18,9 @@ class MetaDataProvider:
         if file_extension not in ['.vue', '.js']:
             return result
         
-        # Read file content
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
         
-        # For Vue files, extract the script part
         if file_extension == '.vue':
             script_match = re.search(r'<script[^>]*>(.*?)</script>', content, re.DOTALL)
             if script_match:
@@ -39,7 +30,6 @@ class MetaDataProvider:
         else:
             script_content = content
         
-        # Extract class names
         class_names = []
         
         # Match traditional JS classes: "class ClassName {"
@@ -52,7 +42,6 @@ class MetaDataProvider:
         if vue_component_match:
             class_names.append(vue_component_match.group(1))
         
-        # Extract function names
         function_names = []
         
         # Traditional function declarations: "function funcName() {" 
@@ -78,7 +67,6 @@ class MetaDataProvider:
             for match in vue_method_matches:
                 function_names.append(match.group(1))
         
-        # Remove duplicates and filter out reserved words
         reserved_words = {'if', 'else', 'for', 'while', 'switch', 'case', 'default', 'return'}
         function_names = [name for name in list(dict.fromkeys(function_names)) if name not in reserved_words]
         
