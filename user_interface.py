@@ -120,13 +120,13 @@ def start_ui():
                     console.print("[bold magenta]Operation cancelled.[/bold magenta]")
                     continue
             while True:
-                chunk_size = get_input("[bold white]Enter chunk size[/bold white]")
+                chunk_size = get_input("[bold white]Enter chunk size (0 < size <= 8191)[/bold white]")
                 if chunk_size.lower() == "cancel":
                         cancel_flag = True
                         break
                 if chunk_size is None:
                     return
-                if chunk_size.isdigit() and int(chunk_size) > 0:
+                if chunk_size.isdigit() and int(chunk_size) > 0 and int(chunk_size) <= 8191:
                     chunk_size = int(chunk_size)
                     break 
                 console.print("[bold magenta]Invalid chunk size![/bold magenta]")
@@ -394,13 +394,14 @@ def start_ui():
 
                 
             console.print("[bold yellow]Searching...[/bold yellow]")
-            console.print("[bold yellow]Searchring finished...[/bold yellow]")
             results = global_object.search([query], top_k=top_k, rerank=reranker, number_to_rerank=number_to_rerank, query_expansion=query_expansion, summary=summary, token_usage=show_tokens, time=show_time)
+            console.print("[bold yellow]Searching finished...[/bold yellow]")
+            print(f"")
+           
 
-
-            print(f"[bold blue]top {top_k} results[/bold blue]")
+            console.print(f"[bold blue]top {top_k} results[/bold blue]")
             for file in results[0][0]:
-                console.print(f"[bold blue]{file}[/bold blue]")
+                console.print(f"{file}")
             if summary:
                 console.print(f"\n[bold blue]Summary:[/bold blue]\n{results[1][0]}\n")
             if show_tokens:
@@ -451,7 +452,7 @@ def start_ui():
             console.print("  [bold blue]price[/bold blue] - approximate price of the building index")
             console.print("  [bold blue]index[/bold blue] - Index a GitHub repo")
             console.print("  [bold blue]query[/bold blue] - Start querying the data")
-            console.print("  [bold blue]evalute[/bold blue]  - show evaluation of the model")
+            console.print("  [bold blue]evaluate[/bold blue]  - show evaluation of the model")
             console.print("  [bold blue]exit[/bold blue]  - Quit the system")
             console.print("  [bold blue]clear[/bold blue] - Clear the screen")
             console.print("  [bold blue]help[/bold blue]  - Show available commands")
