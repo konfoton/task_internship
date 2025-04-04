@@ -32,6 +32,7 @@ recall50 = Recall(50, data_path='escrcpy-commits-generated.json')
 
 # Initialize model objects
 object1 = OpenAIModel(link_repo, models[0], encoding=enc, limit=limit, length_treshold=length_threshold, client=client)
+object1.clone_repo()
 object1.repo_path = "escrcpy"
 object2 = OpenAIModel(link_repo, models[1], encoding=enc, limit=limit, length_treshold=length_threshold, client=client)
 object2.repo_path = "escrcpy"
