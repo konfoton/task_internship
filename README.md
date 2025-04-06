@@ -173,8 +173,8 @@ With the following configuration:
 - **Embedding Model:** `text-embedding-3-large`
 - **Chunk Size:** 2000
 - **Overlap Size:** 500
-- **Query Expansion:** `LLMQueryExpander`
-- **Reranker:** `LLMReranker`
+- **Query Expansion:** `LLMQueryExpander with gpt-4o-mini` 
+- **Reranker:** `LLMReranker with gpt-4o-mini`
 - **Metadata Provider:** Enabled
 
 ---
