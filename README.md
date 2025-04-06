@@ -84,13 +84,17 @@ pip install -r requirements.txt
 export OMP_NUM_THREADS=1
 export OPENAI_API_KEY='YOUR-API-KEY'
 ```
+
 ---
+
 ### Using user_interface
 In order to use my model in user-friendly format run:
 ```
 python user_interface.py
 ```
+
 ---
+
 ### Evalution
 In order to run my best performing model (also in terms of quality-latency trade-off) run:
 ```
@@ -99,7 +103,9 @@ python evalutation.py
 
 <br>
 <br>
+
 ---
+
 # Example usage
 Example demonstarte how to create simple index and then ask query to a system  
 Note: Remember to first run user_intrface
