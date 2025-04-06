@@ -159,7 +159,7 @@ Time: 13.377908945083618
 My evaluation is based on the [commit data](escrcpy-commits-generated.json) and the [escrcpy GitHub repository](https://github.com/viarotel-org/escrcpy).  
 Please note that the repository may have changed since the time of evaluation, so results could differ if re-run.
 
-All experimental results are documented in [experiments.txt], and the corresponding execution scripts are provided in [experiments.py].
+All experimental results are documented in [file](experiments.txt), and the corresponding execution scripts are provided in [script](experiments.py).
 
 ---
 
