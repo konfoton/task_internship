@@ -329,3 +329,18 @@ Average Time: 11.78654414765975
 Token Usage: 957888
 Average Token Usage: 28173.176470588234
 
+====================================
+Model: text-embedding-3-large
+Chunk size: 2000
+Overlap size: 500
+Query expansion: LLMReranker
+Reranker: LLMReranker
+Numbee to rerank: 20
+Metadata provider: True
+
+RECALL@10: 0.8421568627450982
+Time: 5804.525606870651
+Average Time: 170.721314137854857 (high due to API rate limits)
+Token Usage: 774751
+Average Token Usage: 22786.79411764706
+
