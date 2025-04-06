@@ -422,7 +422,7 @@ def start_ui():
                     recall_number = int(recall_number)
                     recall = Recall(recall_number,  data_path='escrcpy-commits-generated.json')
                     print(f"recall number: {recall_number}")
-                    print(global_object.evaluate(top_k=recall_number, metric=recall, query_expansion=None, rerank=None, token_usage=True, time=True))
+                    print(global_object.evaluate(top_k=recall_number, metric=recall, query_expansion=None, rerank=None, token_usage=True, time=True)[1])
                     break
             if cancel_flag:
                 cancel_flag = False
