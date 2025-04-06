@@ -199,7 +199,34 @@ This configuration also performed particularly well on a broader retrieval metri
 This indicated that adding a reranker had strong potential to significantly improve top-10 retrieval performance, which was confirmed in later experiments.
 
 # Latancy-quality trade-off
-Even though my best model is exceling at metrics it is crucial to note that that its avrege execution time 170.721314137854857 and 22786.79411764706 token usage for mutiple parrarel queries make it impracticall dut to api-rate-limit erros, which could be mitigated with greater funds. Then averge result would be approximetly 11 seconds also with summary. On the order hand slightly worse model with only meta data without qury expansion and re ranker acheive outstaining 0.04428429463330437 on average with small token usage associted only with length of query on average and 4 seconds with summary with aveerage 250 tokens usage 
+### ⚙️ Performance vs. Practicality
+
+It is important to note that execution time for both single and multiple queries can vary—not only due to OpenAI API rate limits, but also due to the latency introduced by loading the vector store. In practice, this latency can reach approximately **1 second**, even before any model computation begins.
+
+#### 🚀 Best Model — High Recall, High Latency
+
+While my best-performing model achieved excellent retrieval metrics (RECALL@10: 0.8422), it comes with significant computational and practical overhead during parallel query processing:
+
+- **Average Execution Time:** ~170.72 seconds
+- **Average Token Usage (for multiple parallel queries):** ~22,786.79 tokens
+
+This level of resource usage makes the model **impractical under typical API rate limits**, which frequently cause errors when handling many concurrent queries. However, with access to a higher budget or elevated rate limits, this model could achieve an **approximate average execution time of 11 seconds**, including both retrieval and summary generation.
+
+#### ⚡ Efficient Model — Lower Recall, High Practicality
+
+On the other hand, a simplified model that only uses metadata (with no query expansion or reranker) demonstrated far better practical efficiency while still performing well:
+
+- **RECALL@10:** 0.8348
+- **Average Latency (parallel, single query):** ~1 second  
+  - This latency is largely due to loading the relevant portion of the vector database.
+- **Average Execution Time with Summary:** ~4 seconds
+- **Average Token Usage:** ~250 tokens (mostly dependent on the query length)
+
+This model achieved an impressive average query performance of **0.0443 seconds** when running multiple queries in parallel (excluding summary generation), which makes it highly suitable for real-time or resource-constrained applications.
+
+> 📝 Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
+
+
 
 
 
