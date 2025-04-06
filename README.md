@@ -200,7 +200,7 @@ This indicated that adding a reranker had strong potential to significantly impr
 
 # Latancy-quality-token trade-off
 
-> 📝 Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
+> Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
 
 ### Performance vs. Practicality
 
@@ -220,8 +220,7 @@ This level of resource usage makes the model **impractical under typical API rat
 On the other hand, a simplified model that only uses metadata (with no query expansion or reranker) demonstrated far better practical efficiency while still performing well:
 
 - **RECALL@10:** 0.8348
-- **Average Latency (parallel, single query):** ~1 second  
-  - This latency is largely due to loading the relevant portion of the vector database.
+- **Average Latency (single query):** ~1.04 second  
 - **Average Execution Time with Summary:** ~4 seconds
 - **Average Token Usage:** ~250 tokens (mostly dependent on the query length)
 
