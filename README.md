@@ -7,8 +7,8 @@
 * Overview
 * Setup
 * Example usage
-* Performance
-* Latancy-quality trade-off
+* Performance evaluation
+* Latancy-quality-token trade-off
 
 <br>
 <br>
@@ -154,7 +154,7 @@ Token Usage: 31865
 
 Time: 13.377908945083618
 ```
-## Performance Evaluation
+# Performance Evaluation
 
 My evaluation is based on the [commit data](escrcpy-commits-generated.json) and the [escrcpy GitHub repository](https://github.com/viarotel-org/escrcpy).  
 Please note that the repository may have changed since the time of evaluation, so results could differ if re-run.
@@ -181,7 +181,7 @@ With the following configuration:
 
 ### 🔸 Baseline Experimentation
 
-To motivate this architecture, I first conducted experiments focusing solely on metadata usage, as well as different chunking strategies and sliding window sizes—prioritizing configurations with lower execution times.
+To motivate this architecture, I first conducted experiments focusing solely on firrent openai models, metadata usage, as well as different chunking strategies and sliding window sizes.
 
 The best result from this initial setup was:
 
@@ -197,4 +197,14 @@ This configuration also performed particularly well on a broader retrieval metri
 **RECALL@20: 0.8806**
 
 This indicated that adding a reranker had strong potential to significantly improve top-10 retrieval performance, which was confirmed in later experiments.
+
+# Latancy-quality trade-off
+Even though my best model is exceling at metrics it is crucial to note that that its avrege execution time 170.721314137854857 and 22786.79411764706 token usage for mutiple parrarel queries make it impracticall dut to api-rate-limit erros, which could be mitigated with greater funds. Then averge result would be approximetly 11 seconds also with summary. On the order hand slightly worse model with only meta data without qury expansion and re ranker acheive outstaining 0.04428429463330437 on average with small token usage associted only with length of query on average and 4 seconds with summary with aveerage 250 tokens usage 
+
+
+
+
+
+
+
 
