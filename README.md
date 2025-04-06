@@ -81,7 +81,7 @@ conda create -n rag python=3.13
 conda activate rag
 pip install -r requirements.txt
 export OMP_NUM_THREADS=1
-export OPENAI_API_KEY='YOUR-API-KEY'
+export OPENAI_API_KEY=<YOUR-API-KEY>
 ```
 
 ---
