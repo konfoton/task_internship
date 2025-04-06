@@ -17,6 +17,8 @@
 
 The system is structured into several major components:
 
+---
+
 ### Working Baseline
 
 This module is based on an abstract class called "base_model," which allows for creating working indexes using OpenAI embedding models. It also includes a chunking method that divides files using a sliding window or truncation when exceeding token limits. The design can be extended to accommodate different (including local) models by inheriting from the abstract class.
@@ -66,11 +68,12 @@ This OOP-oriented design facilitates scalability, enabling the addition of new c
 <br>
 
 # Setup
-### Preriquisitives
+### Prerequisites
 
 * Python 3.13.0
 * conda 24.9.2
 
+---
 ### Creating enviroment
 ```
 git clone https://github.com/konfoton/task_internship
@@ -81,11 +84,13 @@ pip install -r requirements.txt
 export OMP_NUM_THREADS=1
 export OPENAI_API_KEY='YOUR-API-KEY'
 ```
+---
 ### Using user_interface
 In order to use my model in user-friendly format run:
 ```
 python user_interface.py
 ```
+---
 ### Evalution
 In order to run my best performing model (also in terms of quality-latency trade-off) run:
 ```
@@ -94,7 +99,7 @@ python evalutation.py
 
 <br>
 <br>
-
+---
 # Example usage
 Example demonstarte how to create simple index and then ask query to a system  
 Note: Remember to first run user_intrface
