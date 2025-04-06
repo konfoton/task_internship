@@ -175,7 +175,7 @@ With the following configuration:
 - **Overlap Size:** 500
 - **Query Expansion:** `LLMQueryExpander with gpt-4o-mini` 
 - **Reranker:** `LLMReranker with gpt-4o-mini`
-- **Metadata Provider:** Enabled
+- **Metadata Provider:** True
 
 ---
 
@@ -191,6 +191,7 @@ Configuration:
 - **Embedding Model:** `text-embedding-3-large`
 - **Chunk Size:** 2000
 - **Overlap Size:** 500
+- **Metadata Provider:** True
 
 This configuration also performed particularly well on a broader retrieval metric:
 
