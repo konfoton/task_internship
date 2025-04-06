@@ -415,7 +415,7 @@ def start_ui():
                     break
                 print("evaluted wihout reranker and query expansion due to high latency")
                 recall_number = get_input("[bold white]Enter recall number:")
-                if recall.lower() == "cancel":
+                if recall_number.lower() == "cancel":
                     cancel_flag = True
                     break
                 if recall_number.isdigit() and int(recall_number) > 0:
