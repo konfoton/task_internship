@@ -200,8 +200,6 @@ This indicated that adding a reranker had strong potential to significantly impr
 
 # Latancy-quality-token trade-off
 
-> Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
-
 ### Performance vs. Practicality
 
 It is important to note that execution time for both single and multiple queries can vary—not only due to OpenAI API rate limits, but also due to the latency introduced by loading the vector store. In practice, this latency can reach approximately **1 second**, even before any model computation begins.
