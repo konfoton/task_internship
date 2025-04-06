@@ -5,8 +5,8 @@
 
 # Table of contents
 * [Overview](Overview)
-* Setup
-* Example usage
+* [Setup](Setup)
+* [Example usage](Example_Usage)
 * Performance evaluation
 * Latancy-quality-token trade-off
 
