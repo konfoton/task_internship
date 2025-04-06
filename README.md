@@ -104,7 +104,6 @@ python evalutation.py
 <br>
 <br>
 
----
 
 # Example usage
 Example demonstarte how to create simple index and then ask query to a system  
