@@ -199,11 +199,11 @@ def start_ui():
                     continue
 
                 while True:
-                    chunk_size = get_input("[bold white]Enter chunk size[/bold white]")
+                    chunk_size = get_input("[bold white]Enter chunk size (0 < size <= 8191)[/bold white]")
                     if chunk_size.lower() == "cancel":
                         cancel_flag = True
                         break
-                    if chunk_size.isdigit() and int(chunk_size) > 0:
+                    if chunk_size.isdigit() and int(chunk_size) > 0 and int(chunk_size) <= 8191:
                         chunk_size = int(chunk_size)
                         break 
                     console.print("[bold magenta]Invalid chunk size![/bold magenta]")
