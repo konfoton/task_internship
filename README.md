@@ -163,7 +163,7 @@ All experimental results are documented in [file](experiments.txt), and the corr
 
 ---
 
-### 🔹 Best Achieved Performance
+### Best Achieved Performance
 
 The highest performance my model achieved was:
 
@@ -179,7 +179,7 @@ With the following configuration:
 
 ---
 
-### 🔸 Baseline Experimentation
+### Baseline Experimentation
 
 To motivate this architecture, I first conducted experiments focusing solely on firrent openai models, metadata usage, as well as different chunking strategies and sliding window sizes.
 
