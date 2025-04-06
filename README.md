@@ -8,7 +8,7 @@
 * Setup
 * Example usage
 * Performance
-* Latancy quality trade-off
+* Latancy-quality trade-off
 
 <br>
 <br>
@@ -154,3 +154,22 @@ Token Usage: 31865
 
 Time: 13.377908945083618
 ```
+# Performence
+My evaluation is based on [file](escrcpy-commits-generated.json) and [repo](https://github.com/viarotel-org/escrcpy), note that by the time the model was evaluated a repo has some modificattions and the result may differ.
+All discuseed result experiments are in [file](experiments.txt) and file with execution [script](experiments.py)
+The highest result that my model acheived was <br>
+RECALL@10: 0.8421568627450982 with characterictic:
+* Model: text-embedding-3-large
+* Chunk size: 2000
+* Overlap size: 500
+* Query expansion: LLMQueryExpander
+* Reranker: LLMReranker
+* Metadata provider: True
+  <br>
+To motivate this architecture I experimented firstly only with metadata and diffrent chunking and slidining windows due to high execution time. <br>
+The best what I acheived was <br>
+RECALL@10: 0.8348039215686276 with:
+* Model: text-embedding-3-large
+* Chunk size: 2000
+* Overlap size: 500
+This model had also great result when it comes to RECALL@20: 0.8806372549019608 which meant that reranker could imporve significantly the search. 
