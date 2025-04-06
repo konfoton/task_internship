@@ -154,22 +154,47 @@ Token Usage: 31865
 
 Time: 13.377908945083618
 ```
-# Performence
-My evaluation is based on [file](escrcpy-commits-generated.json) and [repo](https://github.com/viarotel-org/escrcpy), note that by the time the model was evaluated a repo has some modificattions and the result may differ.
-All discuseed result experiments are in [file](experiments.txt) and file with execution [script](experiments.py)
-The highest result that my model acheived was <br>
-RECALL@10: 0.8421568627450982 with characterictic:
-* Model: text-embedding-3-large
-* Chunk size: 2000
-* Overlap size: 500
-* Query expansion: LLMQueryExpander
-* Reranker: LLMReranker
-* Metadata provider: True
-  <br>
-To motivate this architecture I experimented firstly only with metadata and diffrent chunking and slidining windows due to high execution time. <br>
-The best what I acheived was <br>
-RECALL@10: 0.8348039215686276 with:
-* Model: text-embedding-3-large
-* Chunk size: 2000
-* Overlap size: 500
-This model had also great result when it comes to RECALL@20: 0.8806372549019608 which meant that reranker could imporve significantly the search. 
+## Performance Evaluation
+
+My evaluation is based on the [commit data](escrcpy-commits-generated.json) and the [escrcpy GitHub repository](https://github.com/viarotel-org/escrcpy).  
+Please note that the repository may have changed since the time of evaluation, so results could differ if re-run.
+
+All experimental results are documented in [experiments.txt], and the corresponding execution scripts are provided in [experiments.py].
+
+---
+
+### 🔹 Best Achieved Performance
+
+The highest performance my model achieved was:
+
+**RECALL@10: 0.8422**
+
+With the following configuration:
+- **Embedding Model:** `text-embedding-3-large`
+- **Chunk Size:** 2000
+- **Overlap Size:** 500
+- **Query Expansion:** `LLMQueryExpander`
+- **Reranker:** `LLMReranker`
+- **Metadata Provider:** Enabled
+
+---
+
+### 🔸 Baseline Experimentation
+
+To motivate this architecture, I first conducted experiments focusing solely on metadata usage, as well as different chunking strategies and sliding window sizes—prioritizing configurations with lower execution times.
+
+The best result from this initial setup was:
+
+**RECALL@10: 0.8348**
+
+Configuration:
+- **Embedding Model:** `text-embedding-3-large`
+- **Chunk Size:** 2000
+- **Overlap Size:** 500
+
+This configuration also performed particularly well on a broader retrieval metric:
+
+**RECALL@20: 0.8806**
+
+This indicated that adding a reranker had strong potential to significantly improve top-10 retrieval performance, which was confirmed in later experiments.
+
