@@ -14,6 +14,7 @@
 <br>
 
 # Overview
+---
 
 The system is structured into several major components:
 
