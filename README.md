@@ -95,7 +95,7 @@ python user_interface.py
 ---
 
 ### Evalution
-In order to run my best performing model (also in terms of quality-latency trade-off) run:
+In order to run my best performing model (also in terms of quality-latency-token trade-off) run:
 ```
 python evalutation.py
 ```
