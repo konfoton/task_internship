@@ -198,12 +198,15 @@ This configuration also performed particularly well on a broader retrieval metri
 
 This indicated that adding a reranker had strong potential to significantly improve top-10 retrieval performance, which was confirmed in later experiments.
 
-# Latancy-quality trade-off
-### ⚙️ Performance vs. Practicality
+# Latancy-quality-token trade-off
+
+> 📝 Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
+
+### Performance vs. Practicality
 
 It is important to note that execution time for both single and multiple queries can vary—not only due to OpenAI API rate limits, but also due to the latency introduced by loading the vector store. In practice, this latency can reach approximately **1 second**, even before any model computation begins.
 
-#### 🚀 Best Model — High Recall, High Latency
+#### Best Model — High Recall, High Latency
 
 While my best-performing model achieved excellent retrieval metrics (RECALL@10: 0.8422), it comes with significant computational and practical overhead during parallel query processing:
 
@@ -212,7 +215,7 @@ While my best-performing model achieved excellent retrieval metrics (RECALL@10: 
 
 This level of resource usage makes the model **impractical under typical API rate limits**, which frequently cause errors when handling many concurrent queries. However, with access to a higher budget or elevated rate limits, this model could achieve an **approximate average execution time of 11 seconds**, including both retrieval and summary generation.
 
-#### ⚡ Efficient Model — Lower Recall, High Practicality
+#### Efficient Model — Lower Recall, High Practicality
 
 On the other hand, a simplified model that only uses metadata (with no query expansion or reranker) demonstrated far better practical efficiency while still performing well:
 
@@ -224,7 +227,6 @@ On the other hand, a simplified model that only uses metadata (with no query exp
 
 This model achieved an impressive average query performance of **0.0443 seconds** when running multiple queries in parallel (excluding summary generation), which makes it highly suitable for real-time or resource-constrained applications.
 
-> 📝 Note: All performance metrics and timings were collected under controlled experiments. Real-world behavior may vary due to fluctuating network conditions, API response times, and server-side caching.
 
 
 
