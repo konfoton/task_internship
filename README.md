@@ -221,7 +221,7 @@ On the other hand, a simplified model that only uses metadata (with no query exp
 - **RECALL@10:** 0.8348
 - **Average Latency (single query):** ~1.04 second  
 - **Average Execution Time with Summary:** ~4 seconds
-- **Average Token Usage:** ~250 tokens (mostly dependent on the query length)
+- **Average Token Usage:** ~(mostly dependent on the query length so really small + 200 with summary)
 
 This model achieved an impressive average query performance of **0.0443 seconds** when running multiple queries in parallel (excluding summary generation), which makes it highly suitable for real-time or resource-constrained applications.
 
