@@ -17,7 +17,6 @@
 
 The system is structured into several major components:
 
----
 
 ### Working Baseline
 
