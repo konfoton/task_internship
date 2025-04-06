@@ -4,11 +4,11 @@
 <br>
 
 # Table of contents
-* [Overview](Overview)
-* [Setup](Setup)
-* [Example usage](Example_Usage)
-* Performance evaluation
-* Latancy-quality-token trade-off
+* [Overview](#Overview)
+* [Setup](#Setup)
+* [Example usage](#Example-Usage)
+* [Performance evaluation](#Performance-evaluation)
+* [Latancy-quality-token trade-off](#Latancy-quality-token-trade-off)
 
 <br>
 <br>
