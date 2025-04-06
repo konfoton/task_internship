@@ -174,8 +174,10 @@ Token Usage: 31865
 
 Time: 13.377908945083618
 ```
+
 <br>
 <br>
+
 # Performance Evaluation
 
 My evaluation is based on the [commit data](escrcpy-commits-generated.json) and the [escrcpy GitHub repository](https://github.com/viarotel-org/escrcpy).  
