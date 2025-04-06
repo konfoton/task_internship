@@ -4,7 +4,7 @@
 <br>
 
 # Table of contents
-* Overview
+* [Overview](Overview)
 * Setup
 * Example usage
 * Performance evaluation
