@@ -27,7 +27,7 @@ class OpenAIModel(BaseModel):
     def clone_repo(self):
         cwd = os.getcwd()
         repo_name = self.link_repo.split('/')[-1].replace('.git', '')
-        self.repo_path = os.path.join(cwd, repo_name)
+        self.repo_path = repo_name
         clone_path = os.path.join(cwd, repo_name)
         if os.path.exists(clone_path):
             print(f"Repository already cloned at {clone_path}")

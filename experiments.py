@@ -25,12 +25,12 @@ DictionaryQueryExpander_instance = DictionaryQueryExpander(1)
 LLMReranker_instance = LLMReranker(model_name="gpt-4o", limit=limit, rate_limit=rate_limit, shortening_token=500)
 CrossEncoderReranker_instance = CrossEncoderReranker(model_name="cross-encoder/ms-marco-MiniLM-L-12-v2")
 recall10 = Recall(10, data_path='escrcpy-commits-generated.json')
-recall15 = Recall(20, data_path='escrcpy-commits-generated.json')
+recall15 = Recall(15, data_path='escrcpy-commits-generated.json')
+recall20 = Recall(20, data_path='escrcpy-commits-generated.json')
 recall30 = Recall(30, data_path='escrcpy-commits-generated.json')
 recall40 = Recall(40, data_path='escrcpy-commits-generated.json')
 recall50 = Recall(50, data_path='escrcpy-commits-generated.json')
 
-# Initialize model objects
 object1 = OpenAIModel(link_repo, models[0], encoding=enc, limit=limit, length_treshold=length_threshold, client=client)
 object1.clone_repo()
 object1.repo_path = "escrcpy"
@@ -77,12 +77,12 @@ def single_experiment(f, model_instance, chunk_size, overlap_size,  experiment_n
         f.write(f"Token Usage: {sum(result_10[0][2])}\n")
         f.write(f"Average Token Usage: {sum(result_10[0][2]) / len(result_10[0][2])}\n")
 
-    result_15 = model_instance.evaluate(top_k=15, metric=recall15, query_expansion=query_expansion, upper_bound_search = upper_bound_search, rerank=reranker, token_usage=True, time=True)
-    f.write(f"\nRECALL@20: {result_15[1]}\n")
-    f.write(f"Time: {result_15[0][3]}\n")
-    f.write(f"Average Time: {result_15[0][3] / len(result_15[0][2])}\n")
-    f.write(f"Token Usage: {sum(result_15[0][2])}\n")
-    f.write(f"Average Token Usage: {sum(result_15[0][2]) / len(result_15[0][2])}\n\n")
+    result_20 = model_instance.evaluate(top_k=20, metric=recall15, query_expansion=query_expansion, upper_bound_search = upper_bound_search, rerank=reranker, token_usage=True, time=True)
+    f.write(f"\nRECALL@20: {result_20[1]}\n")
+    f.write(f"Time: {result_20[0][3]}\n")
+    f.write(f"Average Time: {result_20[0][3] / len(result_20[0][2])}\n")
+    f.write(f"Token Usage: {sum(result_20[0][2])}\n")
+    f.write(f"Average Token Usage: {sum(result_20[0][2]) / len(result_20[0][2])}\n\n")
 
     #Additional metrics can be added here, such as recall30, recall40, recall50
 
