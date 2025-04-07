@@ -1,9 +1,17 @@
 import nltk
-nltk.download('wordnet')
+
+try:
+    from nltk.corpus import wordnet as wn
+    wn.synsets('example') 
+except LookupError:
+    nltk.download('wordnet')
+
 from nltk.corpus import wordnet as wn
 from openai import OpenAI
 from typing import List, Tuple, Dict
 from pydantic import BaseModel
+
+
 class ExpandedQuery(BaseModel):
      expanded_query: str
 
