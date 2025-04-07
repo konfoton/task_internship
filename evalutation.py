@@ -24,7 +24,7 @@ recall10 = Recall(10, data_path='escrcpy-commits-generated.json')
 recall20 = Recall(20, data_path='escrcpy-commits-generated.json')
 
 object3 = OpenAIModel(link_repo, models[2], encoding=enc, limit=limit, length_treshold=length_threshold, client=client)
-object3.repo_path.clone_repo()
+object3.clone_repo()
 
 def single_experiment(model_instance, chunk_size, overlap_size,  experiment_number, upper_bound_search = 50, metadata_provider=None, query_expansion=None, reranker=None, name_reranker = None, name_query_expansion = None):
     model_instance.create_index(
