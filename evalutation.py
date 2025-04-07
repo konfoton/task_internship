@@ -56,12 +56,12 @@ def single_experiment(model_instance, chunk_size, overlap_size,  experiment_numb
     print(f"Token Usage: {sum(result_10[0][2])}\n")
     print(f"Average Token Usage: {sum(result_10[0][2]) / len(result_10[0][2])}\n")
     print("----------------------------------------------------\n")
-    result_15 = model_instance.evaluate(top_k=15, metric=recall20, query_expansion=query_expansion, upper_bound_search = upper_bound_search, rerank=reranker, token_usage=True, time=True)
-    print(f"\nRECALL@20: {result_15[1]}\n")
-    print(f"Time: {result_15[0][3]}\n")
-    print(f"Average Time: {result_15[0][3] / len(result_15[0][2])}\n")
-    print(f"Token Usage: {sum(result_15[0][2])}\n")
-    print(f"Average Token Usage: {sum(result_15[0][2]) / len(result_15[0][2])}\n\n")
+    result_20 = model_instance.evaluate(top_k=20, metric=recall20, query_expansion=query_expansion, upper_bound_search = upper_bound_search, rerank=reranker, token_usage=True, time=True)
+    print(f"\nRECALL@20: {result_20[1]}\n")
+    print(f"Time: {result_20[0][3]}\n")
+    print(f"Average Time: {result_20[0][3] / len(result_20[0][2])}\n")
+    print(f"Token Usage: {sum(result_20[0][2])}\n")
+    print(f"Average Token Usage: {sum(result_20[0][2]) / len(result_20[0][2])}\n\n")
 
 
 single_experiment(object3, chunk_size=2000, overlap_size=500, experiment_number=100, metadata_provider=MetaDataProvider_instance, query_expansion=None, reranker=None)
