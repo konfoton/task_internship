@@ -1,4 +1,5 @@
 import nltk
+nltk.download('wordnet')
 from nltk.corpus import wordnet as wn
 from openai import OpenAI
 from typing import List, Tuple, Dict
