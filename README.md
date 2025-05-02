@@ -14,7 +14,7 @@
 <br>
 
 # Overview
-In principle my model is able to search files from any git hub repository based on query. It is done converintg each file into embedding vector then encoding query adn finally choosing the closest vector in appropriate metrics such as (Manhattan metric, cosine similarity and Lp norms). Sometimes files are to big and then we convert them into chunks. All vectors are stored within optimized vector database which use use clustering algorithm for fast search. To enhance efficiency i added metadata to each chunk rearenker and query expasion.
+In principle my model is able to search files from any git hub repository based on query. It is done by converting each file into embedding vector, then encoding query and finally choosing the closest vector in appropriate metric such as (Manhattan metric, cosine similarity and Lp norms). Sometimes files are to big and then we haev toconvert them into chunks. All vectors are stored within optimized vector database which uses clustering algorithms for fast search. To enhance efficiency I added metadata to each chunk, reranker and query expasion.
 The system is structured into several major components:
 
 
